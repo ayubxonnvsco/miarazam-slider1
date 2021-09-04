@@ -1,0 +1,166 @@
+@import url(fonts.css);
+*{
+    margin: 0;
+    padding: 0;
+    block-size: border-box;
+    font-family: 'Ralevay' ,sans-serif;
+}
+body{
+    background: #fff;
+    font-family: 'Montserrat';
+}
+h1{
+    font-weight: 400;
+}
+p{
+    font-weight: 300;
+}
+.main{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background: #444;
+}
+.main .slider{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.main .slider .slides{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    opacity: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: 1s ease-in-out;
+    transition-delay: 0.4s;
+    z-index: -1;
+    overflow: hidden;
+}
+.main .slider .slides:before{
+    position: absolute;
+    content: '';
+    background-color: rgba(0,0,0, 0.5);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+.main .slider .slides:nth-child(1){
+    background: url(../img/joker-cigratte-new-4d-2560x1600.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.main .slider .slides:nth-child(2){
+    background: url(../img/nastol.com.ua-379596.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.main .slider .slides:nth-child(3){
+    background: url(../img/ulitsa_osveshchenie_podsvetka_134856_2560x1600.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.main .slider .slides:nth-child(4){
+    background: url(../img/yin-yang-fire-water-form-shape-1046679.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.main .slider .slides:nth-child(5){
+    background: url(../img/2804044942.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.main .slider .slides.current{
+    opacity: 1;
+    z-index: 1;
+}
+.main .slider .slides h1{
+    font-size: 5.5em;
+    font-weight: 750;
+    color: #fff;
+    text-shadow: 0px 0.5px 15px rgba(0, 0, 0, 0.8);
+    margin-left: -500%;
+    transition: 0.5s linear;
+} 
+.main .slider .slides.current h1{
+    animation: animateheading 2s forwards 1;
+    animation-delay: 0.3s;
+}
+@keyframes animateheading{
+    to{
+        margin-left:0 ;
+    }
+}
+
+
+.main .slider .slides p{
+    font-size: 1.5em;
+    font-weight: 600;
+    color: #fff;
+    text-shadow: 0px 0.5px 15px rgba(0, 0, 0, 0.8);
+    margin-right: -500%;
+    transition: 0.5s linear;
+} 
+.main .slider .slides.current p{
+    animation: animateParagraph 2s forwards 1;
+    animation-delay: 0.3s;
+}
+@keyframes animateParagraph{
+    to{
+        margin-right:0 ;
+    }
+}
+
+
+.main a{
+    position: fixed;
+    text-decoration: none;
+    color:#fff;
+    font-size: 2.2em;
+    z-index: 9999;
+    cursor: pointer;
+}
+.main a.next{
+    right: 2%;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 3px solid #fff;
+    padding: 7px 15px;
+    border-radius: 50%;
+    color: #fff;
+    font-weight: 700;
+    transition: o.3s ease-in-out;
+} 
+.main a.prev{
+    left: 2%;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 3px solid #fff;
+    padding: 7px 15px;
+    border-radius: 50%;
+    color: #fff;
+    font-weight: 700;
+    transition: o.4s ease-in-out;
+} 
+.main a.next:hover,
+.main a.prev:hover{
+    background: #017bf5;
+    border-color: #017bf5;
+}
+.main a.button_start{
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #017bf5;
+    padding: 10px 15px;
+    border-radius: 5px ;
+    font-weight: 550;
+}
+.main a.button_start:hover{
+    background:#017bf5 ;
+}
